@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TodoAppNTier.Entities.Concrete
+namespace TodoAppNTier.Dtos.WorkDtos
 {
-    public class Work : BaseEntity
+    public class WorkCreateDto
     {
         public string Definition { get; set; }
         public bool IsCompleted { get; set; }

@@ -1,0 +1,27 @@
+﻿@model WorkUpdateDto
+@{
+    ViewData["Title"] = "Update";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="__form my-5">
+    <h4 class="text-center">Create new Work</h4>
+    <form asp-action="Update" asp-controller="Home" method="post" class="w-75" mx-auto>
+        <input type="hidden" asp-for="@Model.Id"/>
+        <div class="mb-3">
+            <label for="Definition">Work description : </label>
+            <input asp-for="@Model.Definition" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <input type="checkbox" asp-for="@Model.IsCompleted" class="form-check-input" />
+            <label class="form-check-label" for="IsCompleted">
+                Completed
+            </label>
+        </div>
+        <div class="mb-3">
+            <button type="submit" class="btn btn-success">Save</button>
+        </div>
+    </form>
+</div>
+
+

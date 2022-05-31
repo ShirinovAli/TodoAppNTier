@@ -1,0 +1,32 @@
+﻿@model List<WorkListDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="__create text-end my-4">
+    <a asp-action="Create" asp-controller="Home" class="btn btn-outline-primary">+ Create</a>
+</div>
+<div class="table table-responsives mt-2">
+    <table class="table table-bordered table-hover">
+        <thead class="table-dark">
+            <tr>
+                <th>Work</th>
+                <th>Status</th>
+                <th>Operations</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var work in Model)
+            {
+                <tr>
+                    <td>@work.Definition</td>
+                    <td>@(work.IsCompleted?"Tamamlandı":"Tamamlanmadı")</td>
+                    <td>
+                        <a asp-action="Update" asp-controller="Home" asp-route-id="@work.Id" class="btn btn-outline-warning btn-sm">Edit</a>
+                        <a asp-action="Remove" asp-controller="Home" asp-route-id="@work.Id" class="btn btn-outline-danger btn-sm">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
